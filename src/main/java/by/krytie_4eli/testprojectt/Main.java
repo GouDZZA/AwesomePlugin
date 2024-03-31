@@ -13,6 +13,10 @@ public final class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
+
+        getCommand("test").setExecutor(new CmdExec());
+        getCommand("test").setTabCompleter(new CmdExec());
+
     }
 
     @Override
