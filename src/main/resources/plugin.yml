@@ -1,0 +1,4 @@
+name: testProjectt
+version: '${project.version}'
+main: by.likebebras.testprojectt.TestProjectt
+api-version: '1.20'
