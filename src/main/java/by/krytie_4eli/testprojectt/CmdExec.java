@@ -1,5 +1,7 @@
 package by.krytie_4eli.testprojectt;
 
+import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -12,12 +14,16 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.List;
 
 public class CmdExec implements CommandExecutor, TabExecutor {
+
+    public static String NO_FALL_DAMAGE_ITEM = ChatColor.GOLD + "Амулет каменных ног";
+
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] args) {
         if (args.length >= 1 ) {
             if (commandSender instanceof Player) {
                 Player sender = (Player) commandSender;
                 switch (args[0].toLowerCase()){
+
                     case "enchant":
                         ItemStack itemInHand = sender.getEquipment().getItemInMainHand();
                         ItemMeta meta = itemInHand.getItemMeta();
@@ -34,7 +40,16 @@ public class CmdExec implements CommandExecutor, TabExecutor {
 
                         }
 
+                    case "item":
+                        ItemStack item = new ItemStack(Material.NETHER_STAR);
+                        ItemMeta anotherMeta = item.getItemMeta();
+                        anotherMeta.setDisplayName(NO_FALL_DAMAGE_ITEM);
+                        item.setItemMeta(anotherMeta);
 
+                        sender.getInventory().addItem(item);
+                        sender.sendMessage("Амулет каменных ног выдан!");
+                        
+                        return true;
                 }
             } else commandSender.sendMessage("only players");
         }

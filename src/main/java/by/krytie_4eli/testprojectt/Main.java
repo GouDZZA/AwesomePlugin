@@ -17,6 +17,8 @@ public final class Main extends JavaPlugin {
         getCommand("test").setExecutor(new CmdExec());
         getCommand("test").setTabCompleter(new CmdExec());
 
+        getServer().getPluginManager().registerEvents(new ItemsListener(), this);
+
     }
 
     @Override
