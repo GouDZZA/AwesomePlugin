@@ -1,4 +1,4 @@
 name: testProjectt
 version: '${project.version}'
-main: by.likebebras.testprojectt.TestProjectt
+main: by.krytie_4eli.testprojectt.TestProjectt
 api-version: '1.20'
