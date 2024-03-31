@@ -1,4 +1,4 @@
-package by.krytie_4eli.testprojectt;
+package by.krytie_4eli.AwesomePlugin;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -38,6 +38,20 @@ public class CmdExec implements CommandExecutor, TabExecutor {
 
                                 return true;
 
+                            case "SHARPNESS":
+                            case "ОСТРАТА":
+                                meta.addEnchant(Enchantment.DAMAGE_ALL, Integer.parseInt(args[2]), true);
+                                itemInHand.setItemMeta(meta);
+
+                                sender.sendMessage("Острата успешно применена!");
+
+                                return true;
+
+                            default:
+
+                                sender.sendMessage("Вы не указали название зачарования!");
+
+                                return true;
                         }
 
                     case "item":
@@ -48,8 +62,16 @@ public class CmdExec implements CommandExecutor, TabExecutor {
 
                         sender.getInventory().addItem(item);
                         sender.sendMessage("Амулет каменных ног выдан!");
-                        
+
                         return true;
+
+                    case "heal":
+                        sender.setHealth(sender.getMaxHealth());
+                        sender.setSaturation(100);
+                        sender.setFoodLevel(20);
+
+                        sender.sendMessage("Вы вылечены!");
+
                 }
             } else commandSender.sendMessage("only players");
         }

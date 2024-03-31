@@ -1,4 +1,4 @@
-package by.krytie_4eli.testprojectt;
+package by.krytie_4eli.AwesomePlugin;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

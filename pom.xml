@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>by.krytie_4eli</groupId>
-  <artifactId>testProjectt</artifactId>
+  <artifactId>AwesomePlugin</artifactId>
   <version>1.0</version>
   <packaging>jar</packaging>
 
-  <name>testProjectt</name>
+  <name>AwesomePlugin</name>
 
   <properties>
     <java.version>1.8</java.version>
