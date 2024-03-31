@@ -1,8 +1,8 @@
-package by.likebebras.testprojectt;
+package by.krytie_4eli.testprojectt;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class TestProjectt extends JavaPlugin {
+public final class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
