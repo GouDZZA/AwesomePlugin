@@ -47,6 +47,15 @@ public class CmdExec implements CommandExecutor, TabExecutor {
 
                                 return true;
 
+                            case "LOOTING":
+                            case "ДОБЫЧА":
+                                meta.addEnchant(Enchantment.LOOT_BONUS_MOBS, Integer.parseInt(args[2]), true);
+                                itemInHand.setItemMeta(meta);
+
+                                sender.sendMessage("Добыча успешно применена!");
+
+                                return true;
+
                             default:
 
                                 sender.sendMessage("Вы не указали название зачарования!");
